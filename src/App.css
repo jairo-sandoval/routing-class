@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+
+.navigator{
+  width: 90%;
+}
+
+.navigator ul{
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigator ul li a{
+  text-decoration: none;
+}
+
+.wrapper-users{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: auto;
+}
+
+.card-user{
+  width: 200px;
+  min-height: 300px;
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid black;
+}

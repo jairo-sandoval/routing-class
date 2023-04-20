@@ -1,24 +1,46 @@
-import logo from './logo.svg';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './components/Home'
 import './App.css';
+import AboutUs from './components/AboutUs';
+import OurMission from './components/OurMission';
+import Contact from './components/Contact'
+import SingleUser from './components/SingleUser';
+import ProtectedRoutes from './components/auth/ProtectedRoutes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <nav className='navigator'>
+        <ul>
+          <li>
+            <Link to="/about-us" >About us </Link>
+          </li>
+          <li>
+            <Link to="/our-mission" >Our mission </Link>
+
+          </li>
+          <li>
+            <Link to="/" >Home </Link>
+
+          </li>
+          <li>
+            <Link to="/contact" >Contact </Link>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/our-mission' element={<OurMission/>}/>
+        <Route path='/our-mission/vision' element={<OurMission/>}/>
+        <Route path='/our-mission/mission' element={<Contact/>}/>
+
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/contact' element={<Contact/>}/>
+          <Route path='/about-us' element={<AboutUs/>}/>
+          <Route path='/about-us/:id' element={<SingleUser/>}/>
+        </Route>
+      </Routes>
+    </>
   );
 }
 
