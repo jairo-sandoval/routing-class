@@ -6,6 +6,7 @@ import OurMission from './components/OurMission';
 import Contact from './components/Contact'
 import SingleUser from './components/SingleUser';
 import ProtectedRoutes from './components/auth/ProtectedRoutes';
+import Counter from './components/testing/Counter';
 
 function App() {
   return (
@@ -34,11 +35,12 @@ function App() {
         <Route path='/our-mission/vision' element={<OurMission/>}/>
         <Route path='/our-mission/mission' element={<Contact/>}/>
 
-        <Route element={<ProtectedRoutes />}>
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='/about-us' element={<AboutUs/>}/>
-          <Route path='/about-us/:id' element={<SingleUser/>}/>
-        </Route>
+        
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/contact/testing' element={<Counter/>}/>
+        <Route path='/about-us' element={<AboutUs/>}/>
+        <Route path='/about-us/:id' element={<SingleUser/>}/>
+      
       </Routes>
     </>
   );

@@ -18,6 +18,7 @@ const SingleUser = () => {
         <div>
             <h2>Personal profile</h2>
             ....
+            
         </div>
     );
 };
